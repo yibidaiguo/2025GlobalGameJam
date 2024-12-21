@@ -16,14 +16,12 @@ public partial class Tables
     public common.TbGlobalConfig TbGlobalConfig {get; }
     public l10n.TbL10NDemo TbL10NDemo {get; }
     public l10n.TbPatchDemo TbPatchDemo {get; }
-    public player.TbPlayerAnimatorConfig TbPlayerAnimatorConfig {get; }
 
     public Tables(System.Func<string, ByteBuf> loader)
     {
         TbGlobalConfig = new common.TbGlobalConfig(loader("common_tbglobalconfig"));
         TbL10NDemo = new l10n.TbL10NDemo(loader("l10n_tbl10ndemo"));
         TbPatchDemo = new l10n.TbPatchDemo(loader("l10n_tbpatchdemo"));
-        TbPlayerAnimatorConfig = new player.TbPlayerAnimatorConfig(loader("player_tbplayeranimatorconfig"));
         ResolveRef();
     }
     
@@ -32,7 +30,6 @@ public partial class Tables
         TbGlobalConfig.ResolveRef(this);
         TbL10NDemo.ResolveRef(this);
         TbPatchDemo.ResolveRef(this);
-        TbPlayerAnimatorConfig.ResolveRef(this);
     }
 }
 
