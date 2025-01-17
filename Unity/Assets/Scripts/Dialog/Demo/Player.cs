@@ -4,7 +4,6 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     public static Player Instance;
-    public SkillConfig currentSkill;
     public RoleConfig roleConfig;
     private void Awake()
     {
@@ -20,7 +19,7 @@ public class Player : MonoBehaviour
             if (hitInfo.collider != null)
             {
                 NPC npc = hitInfo.collider.GetComponent<NPC>();
-                UISystem.Show<UI_DialogWindow>().StartDialog(npc.dialogConfig, npc, this);
+                UISystem.Show<UI_DialogWindow>().StartDialog(npc.dialogConfig);
             }
         }
     }

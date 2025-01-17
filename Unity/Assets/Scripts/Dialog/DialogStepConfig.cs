@@ -8,5 +8,7 @@ public class DialogStepConfig
     [HideLabel, Multiline(2)] public string content;
     public List<IDialogEvent> onStartEventList = new List<IDialogEvent>();
     public List<IDialogEvent> onEndEventList = new List<IDialogEvent>();
+    public string iconName;
+    public string spakerName;
 }
 

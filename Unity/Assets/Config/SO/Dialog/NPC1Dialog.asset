@@ -63,6 +63,12 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
+    - Name: iconName
+      Entry: 1
+      Data: 1
+    - Name: spakerName
+      Entry: 1
+      Data: npc
     - Name: 
       Entry: 8
       Data: 
@@ -101,6 +107,12 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
+    - Name: iconName
+      Entry: 1
+      Data: 1
+    - Name: spakerName
+      Entry: 1
+      Data: npc
     - Name: 
       Entry: 8
       Data: 
@@ -119,13 +131,7 @@ MonoBehaviour:
         mscorlib
     - Name: 
       Entry: 12
-      Data: 1
-    - Name: 
-      Entry: 7
-      Data: 9|DialogCheckSkillEvent, Assembly-CSharp
-    - Name: 
-      Entry: 8
-      Data: 
+      Data: 0
     - Name: 
       Entry: 13
       Data: 
@@ -134,44 +140,67 @@ MonoBehaviour:
       Data: 
     - Name: onEndEventList
       Entry: 7
-      Data: 10|System.Collections.Generic.List`1[[IDialogEvent, Assembly-CSharp]],
+      Data: 9|System.Collections.Generic.List`1[[IDialogEvent, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: iconName
+      Entry: 1
       Data: 1
+    - Name: spakerName
+      Entry: 1
+      Data: npc
+    - Name: 
+      Entry: 8
+      Data: 
     - Name: 
       Entry: 7
-      Data: 11|DialogSkillSelectionEvent, Assembly-CSharp
-    - Name: skillIDs
+      Data: 10|DialogStepConfig, Assembly-CSharp
+    - Name: player
+      Entry: 5
+      Data: false
+    - Name: content
+      Entry: 1
+      Data: "\u4F60\u771F\u6709\u773C\u5149\uFF0C\u8FD9\u4E2A\u662F\u7EDD\u4E16\u6280\u80FD\uFF01\u4F60\u8D5A\u5230\u4E86\uFF01"
+    - Name: onStartEventList
       Entry: 7
-      Data: 12|System.String[], mscorlib
+      Data: 11|System.Collections.Generic.List`1[[IDialogEvent, Assembly-CSharp]],
+        mscorlib
     - Name: 
       Entry: 12
-      Data: 3
-    - Name: 
-      Entry: 1
-      Data: Skill1
-    - Name: 
-      Entry: 1
-      Data: Skill2
-    - Name: 
-      Entry: 1
-      Data: Skill3
+      Data: 0
     - Name: 
       Entry: 13
       Data: 
     - Name: 
       Entry: 8
       Data: 
+    - Name: onEndEventList
+      Entry: 7
+      Data: 12|System.Collections.Generic.List`1[[IDialogEvent, Assembly-CSharp]],
+        mscorlib
     - Name: 
-      Entry: 8
-      Data: 
+      Entry: 12
+      Data: 0
     - Name: 
       Entry: 13
       Data: 
     - Name: 
       Entry: 8
       Data: 
+    - Name: iconName
+      Entry: 1
+      Data: 1
+    - Name: spakerName
+      Entry: 1
+      Data: npc
     - Name: 
       Entry: 8
       Data: 
@@ -183,55 +212,17 @@ MonoBehaviour:
       Data: false
     - Name: content
       Entry: 1
-      Data: "\u4F60\u771F\u6709\u773C\u5149\uFF0C\u8FD9\u4E2A{SkillName}\u662F\u7EDD\u4E16\u6280\u80FD\uFF01\u4F60\u8D5A\u5230\u4E86\uFF01"
+      Data: "\u600E\u4E48\u8FD8\u4E0D\u8D70\uFF01"
     - Name: onStartEventList
       Entry: 7
       Data: 14|System.Collections.Generic.List`1[[IDialogEvent, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
-      Data: 0
-    - Name: 
-      Entry: 13
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: onEndEventList
-      Entry: 7
-      Data: 15|System.Collections.Generic.List`1[[IDialogEvent, Assembly-CSharp]],
-        mscorlib
-    - Name: 
-      Entry: 12
-      Data: 0
-    - Name: 
-      Entry: 13
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 16|DialogStepConfig, Assembly-CSharp
-    - Name: player
-      Entry: 5
-      Data: false
-    - Name: content
-      Entry: 1
-      Data: "\u600E\u4E48\u8FD8\u4E0D\u8D70\uFF01"
-    - Name: onStartEventList
-      Entry: 7
-      Data: 17|System.Collections.Generic.List`1[[IDialogEvent, Assembly-CSharp]],
-        mscorlib
-    - Name: 
-      Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 18|DialogRedScreenEvent, Assembly-CSharp
+      Data: 15|DialogRedScreenEvent, Assembly-CSharp
     - Name: speed
       Entry: 4
       Data: 1
@@ -241,6 +232,50 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: onEndEventList
+      Entry: 7
+      Data: 16|System.Collections.Generic.List`1[[IDialogEvent, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: iconName
+      Entry: 1
+      Data: 1
+    - Name: spakerName
+      Entry: 1
+      Data: npc
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 17|DialogStepConfig, Assembly-CSharp
+    - Name: player
+      Entry: 5
+      Data: false
+    - Name: content
+      Entry: 1
+      Data: "\u600E\u4E48\u8FD8\u4E0D\u8D70\uFF01!"
+    - Name: onStartEventList
+      Entry: 7
+      Data: 18|System.Collections.Generic.List`1[[IDialogEvent, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
     - Name: 
       Entry: 13
       Data: 
@@ -260,6 +295,12 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
+    - Name: iconName
+      Entry: 1
+      Data: 1
+    - Name: spakerName
+      Entry: 1
+      Data: npc
     - Name: 
       Entry: 8
       Data: 
@@ -298,6 +339,12 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
+    - Name: iconName
+      Entry: 1
+      Data: 1
+    - Name: spakerName
+      Entry: 1
+      Data: npc
     - Name: 
       Entry: 8
       Data: 
@@ -309,7 +356,7 @@ MonoBehaviour:
       Data: false
     - Name: content
       Entry: 1
-      Data: "\u600E\u4E48\u8FD8\u4E0D\u8D70\uFF01!"
+      Data: "\u54FC\uFF01"
     - Name: onStartEventList
       Entry: 7
       Data: 24|System.Collections.Generic.List`1[[IDialogEvent, Assembly-CSharp]],
@@ -336,44 +383,12 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 26|DialogStepConfig, Assembly-CSharp
-    - Name: player
-      Entry: 5
-      Data: false
-    - Name: content
+    - Name: iconName
       Entry: 1
-      Data: "\u54FC\uFF01"
-    - Name: onStartEventList
-      Entry: 7
-      Data: 27|System.Collections.Generic.List`1[[IDialogEvent, Assembly-CSharp]],
-        mscorlib
-    - Name: 
-      Entry: 12
-      Data: 0
-    - Name: 
-      Entry: 13
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: onEndEventList
-      Entry: 7
-      Data: 28|System.Collections.Generic.List`1[[IDialogEvent, Assembly-CSharp]],
-        mscorlib
-    - Name: 
-      Entry: 12
-      Data: 0
-    - Name: 
-      Entry: 13
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
+      Data: 1
+    - Name: spakerName
+      Entry: 1
+      Data: npc
     - Name: 
       Entry: 8
       Data: 

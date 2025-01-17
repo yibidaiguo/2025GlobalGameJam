@@ -12,7 +12,7 @@ public static class DialogConfigImporter
     private static string soDirPath = "Assets/Config/SO/Dialog";
     private static string excelDirPath = "Assets/Config/Excel/Dialog";
     private static Dictionary<string, Type> allEventTypeDic;
-    [MenuItem("Porject/DialogConfigImporter")]
+    [MenuItem("Tool/导入对话配置")]
     public static void ImprotAll()
     {
         FindAllDialogEventType();
@@ -52,6 +52,8 @@ public static class DialogConfigImporter
                 step.content = worksheet.Cells[y, 2].Text.Trim();
                 step.onStartEventList = ConverDialogEvent(worksheet.Cells[y, 3].Text.Trim());
                 step.onEndEventList = ConverDialogEvent(worksheet.Cells[y, 4].Text.Trim());
+                step.iconName = worksheet.Cells[y, 5].Text.Trim();
+                step.spakerName = worksheet.Cells[y, 6].Text.Trim();
                 dialogConfig.stepList.Add(step);
             }
         }

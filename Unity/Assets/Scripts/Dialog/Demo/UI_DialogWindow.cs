@@ -3,6 +3,7 @@ using UnityEngine.UI;
 using System.Collections;
 using System.Collections.Generic;
 using JKFrame;
+using Unity.VisualScripting;
 
 public class UI_DialogWindow : UI_WindowBase
 {
@@ -23,22 +24,29 @@ public class UI_DialogWindow : UI_WindowBase
     {
         gameObject.SetActive(false);
     }
-    public void Close()
+
+    public override void OnClose()
     {
+        base.OnClose();
         gameObject.SetActive(false);
         StopAllCoroutines();
         dialogConfig = null;
         npc = null;
         player = null;
     }
-    public void StartDialog(DialogConfig dialogConfig, NPC npc, Player player, int stepIndex = 0)
+    
+    public void StartDialog(DialogConfig DialogConfig, int stepIndex = 0)
     {
-        gameObject.SetActive(true);
-        this.dialogConfig = dialogConfig;
-        this.npc = npc;
-        this.player = player;
+        if (DialogConfig == null)
+        {
+            UISystem.Close<UI_DialogWindow>();
+            return;
+        }
+        
+        UISystem.Show<UI_DialogWindow>();
+        dialogConfig = DialogConfig;
         this.stepIndex = stepIndex;
-        StartDialogStep(dialogConfig.stepList[stepIndex]);
+        StartDialogStep(DialogConfig.stepList[stepIndex]);
     }
 
     private void StartDialogStep(DialogStepConfig stepConfig)
@@ -48,9 +56,21 @@ public class UI_DialogWindow : UI_WindowBase
 
     private IEnumerator DoDialogStep(DialogStepConfig stepConfig)
     {
-        RoleConfig roleConfig = stepConfig.player ? player.roleConfig : npc.roleConfig;
-        npcImage.sprite = roleConfig.headIcon;
-        npcNameText.text = roleConfig.roleName;
+        if (stepConfig.player)
+        {
+            playerImage.gameObject.SetActive(true);
+            playerNameText.text = stepConfig.spakerName;
+            playerImage.sprite = ResSystem.LoadAsset<Sprite>(stepConfig.iconName);
+            npcImage.gameObject.SetActive(false);
+        }
+        else
+        {
+            npcImage.gameObject.SetActive(true);
+            npcNameText.text = stepConfig.spakerName;
+            npcImage.sprite = ResSystem.LoadAsset<Sprite>(stepConfig.iconName);
+            playerImage.gameObject.SetActive(false);
+        }
+        
         // 开始事件
         DoStepEventsNonBlock(stepConfig.onStartEventList);
         yield return DoStepEventsBlock(stepConfig.onStartEventList);
@@ -67,7 +87,7 @@ public class UI_DialogWindow : UI_WindowBase
             stepIndex += 1;
             StartDialogStep(dialogConfig.stepList[stepIndex]);
         }
-        else Close();
+        else OnClose();
     }
 
     private void DoStepEventsNonBlock(List<IDialogEvent> eventList)
