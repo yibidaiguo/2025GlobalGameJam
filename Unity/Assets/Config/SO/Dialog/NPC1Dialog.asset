@@ -1,0 +1,385 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba24b6380945e0744afb73a5ced07e98, type: 3}
+  m_Name: NPC1Dialog
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes:
+    - Name: stepList
+      Entry: 7
+      Data: 0|System.Collections.Generic.List`1[[DialogStepConfig, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 8
+    - Name: 
+      Entry: 7
+      Data: 1|DialogStepConfig, Assembly-CSharp
+    - Name: player
+      Entry: 5
+      Data: true
+    - Name: content
+      Entry: 1
+      Data: "\u4F60\u597D\u5440"
+    - Name: onStartEventList
+      Entry: 7
+      Data: 2|System.Collections.Generic.List`1[[IDialogEvent, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: onEndEventList
+      Entry: 7
+      Data: 3|System.Collections.Generic.List`1[[IDialogEvent, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 4|DialogStepConfig, Assembly-CSharp
+    - Name: player
+      Entry: 5
+      Data: false
+    - Name: content
+      Entry: 1
+      Data: "\u6211\u597D\u7684\u5F88\uFF01"
+    - Name: onStartEventList
+      Entry: 7
+      Data: 5|System.Collections.Generic.List`1[[IDialogEvent, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: onEndEventList
+      Entry: 7
+      Data: 6|System.Collections.Generic.List`1[[IDialogEvent, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 7|DialogStepConfig, Assembly-CSharp
+    - Name: player
+      Entry: 5
+      Data: false
+    - Name: content
+      Entry: 1
+      Data: "\u6211\u8FD9\u91CC\u6709\u4E09\u4E2A\u6280\u80FD\u4F9B\u4F60\u9009\u62E9\uFF01"
+    - Name: onStartEventList
+      Entry: 7
+      Data: 8|System.Collections.Generic.List`1[[IDialogEvent, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: 9|DialogCheckSkillEvent, Assembly-CSharp
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: onEndEventList
+      Entry: 7
+      Data: 10|System.Collections.Generic.List`1[[IDialogEvent, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: 11|DialogSkillSelectionEvent, Assembly-CSharp
+    - Name: skillIDs
+      Entry: 7
+      Data: 12|System.String[], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 3
+    - Name: 
+      Entry: 1
+      Data: Skill1
+    - Name: 
+      Entry: 1
+      Data: Skill2
+    - Name: 
+      Entry: 1
+      Data: Skill3
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 13|DialogStepConfig, Assembly-CSharp
+    - Name: player
+      Entry: 5
+      Data: false
+    - Name: content
+      Entry: 1
+      Data: "\u4F60\u771F\u6709\u773C\u5149\uFF0C\u8FD9\u4E2A{SkillName}\u662F\u7EDD\u4E16\u6280\u80FD\uFF01\u4F60\u8D5A\u5230\u4E86\uFF01"
+    - Name: onStartEventList
+      Entry: 7
+      Data: 14|System.Collections.Generic.List`1[[IDialogEvent, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: onEndEventList
+      Entry: 7
+      Data: 15|System.Collections.Generic.List`1[[IDialogEvent, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 16|DialogStepConfig, Assembly-CSharp
+    - Name: player
+      Entry: 5
+      Data: false
+    - Name: content
+      Entry: 1
+      Data: "\u600E\u4E48\u8FD8\u4E0D\u8D70\uFF01"
+    - Name: onStartEventList
+      Entry: 7
+      Data: 17|System.Collections.Generic.List`1[[IDialogEvent, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: 18|DialogRedScreenEvent, Assembly-CSharp
+    - Name: speed
+      Entry: 4
+      Data: 1
+    - Name: stay
+      Entry: 4
+      Data: 0.5
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: onEndEventList
+      Entry: 7
+      Data: 19|System.Collections.Generic.List`1[[IDialogEvent, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 20|DialogStepConfig, Assembly-CSharp
+    - Name: player
+      Entry: 5
+      Data: false
+    - Name: content
+      Entry: 1
+      Data: "\u600E\u4E48\u8FD8\u4E0D\u8D70\uFF01!"
+    - Name: onStartEventList
+      Entry: 7
+      Data: 21|System.Collections.Generic.List`1[[IDialogEvent, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: onEndEventList
+      Entry: 7
+      Data: 22|System.Collections.Generic.List`1[[IDialogEvent, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 23|DialogStepConfig, Assembly-CSharp
+    - Name: player
+      Entry: 5
+      Data: false
+    - Name: content
+      Entry: 1
+      Data: "\u600E\u4E48\u8FD8\u4E0D\u8D70\uFF01!"
+    - Name: onStartEventList
+      Entry: 7
+      Data: 24|System.Collections.Generic.List`1[[IDialogEvent, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: onEndEventList
+      Entry: 7
+      Data: 25|System.Collections.Generic.List`1[[IDialogEvent, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 26|DialogStepConfig, Assembly-CSharp
+    - Name: player
+      Entry: 5
+      Data: false
+    - Name: content
+      Entry: 1
+      Data: "\u54FC\uFF01"
+    - Name: onStartEventList
+      Entry: 7
+      Data: 27|System.Collections.Generic.List`1[[IDialogEvent, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: onEndEventList
+      Entry: 7
+      Data: 28|System.Collections.Generic.List`1[[IDialogEvent, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
