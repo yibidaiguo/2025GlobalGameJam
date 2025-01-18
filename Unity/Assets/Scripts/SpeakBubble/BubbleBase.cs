@@ -70,6 +70,11 @@ public class BubbleBase : MonoBehaviour
         onComplete?.Invoke();
     }
 
+    public void PlayBubbleBurst()
+    {
+        animator.SetTrigger("IsDie");
+    }
+    
     public virtual void OnDie()
     {
         if (!gameObject.IsDestroyed())

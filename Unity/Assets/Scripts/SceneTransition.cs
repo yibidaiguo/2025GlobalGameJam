@@ -2,40 +2,25 @@ using System;
 using System.Collections;
 using JKFrame;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class SceneTransition : SingletonMono<SceneTransition>
 {
-    public CanvasGroup fadeCanvasGroup;
+    public Animator fadeAnimator;
     
     public IEnumerator FadeIn(Action onCompleted = null)
     {
-        if (fadeCanvasGroup == null)
+
+        fadeAnimator.gameObject.SetActive(true);
+        
+        fadeAnimator.Play("Transition");
+        yield return null;
+        while (fadeAnimator.GetCurrentAnimatorStateInfo(0).normalizedTime < 1)
         {
-            Debug.LogError("fadeCanvasGroup没有设置!");
-            yield break;
-        }
-        fadeCanvasGroup.alpha = 1;
-        while (fadeCanvasGroup.alpha > 0)
-        {
-            fadeCanvasGroup.alpha -= 0.05f;
             yield return null;
         }
+        fadeAnimator.gameObject.SetActive(false);
         onCompleted?.Invoke();
     }
     
-    public IEnumerator FadeOut(Action onCompleted = null)
-    {
-        if (fadeCanvasGroup == null)
-        {
-            Debug.LogError("fadeCanvasGroup没有设置!");
-            yield break;
-        }
-        fadeCanvasGroup.alpha = 0;
-        while (fadeCanvasGroup.alpha < 1)
-        {
-            fadeCanvasGroup.alpha += 0.05f;
-            yield return null;
-        }
-        onCompleted?.Invoke();
-    }
 }
