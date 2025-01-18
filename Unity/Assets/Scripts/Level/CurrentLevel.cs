@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class CurrentLevel : MonoBehaviour
 {
-    [SerializeField] private RectTransform sentenceGroup;
+    [SerializeField] public RectTransform sentenceGroup{get;private set;}
     [ShowInInspector] private int currentLevel;//当前对话
     [ShowInInspector] private int currentSentenceIndex;//当前对话的索引
     [ShowInInspector] public Sentence currentSentence { get; private set; }
@@ -15,6 +15,7 @@ public class CurrentLevel : MonoBehaviour
 
     private Coroutine sentenceCoroutine;
     private bool sentenceActive;
+
     
     private void OnEnable()
     {
@@ -43,9 +44,16 @@ public class CurrentLevel : MonoBehaviour
 
     public void StopSentenceCoroutine()
     {
+        Debug.Log("StopSentenceCoroutine");
         if (sentenceCoroutine != null)
+        {   
+            
             StopCoroutine(sentenceCoroutine);
+            Debug.Log("StopSentenceCoroutine2");
+        }
+        
         sentenceActive = false;
+        Debug.Log("StopSentenceCoroutine3");
     }
     
     private IEnumerator LevelShow()
@@ -71,9 +79,6 @@ public class CurrentLevel : MonoBehaviour
                     yield return null;
                     if (!sentenceActive) break;
                 }
-
-                
-                yield return StartCoroutine(StartSentence(currentSentence));
                 
                 sentenceEnd();
             }
@@ -97,11 +102,10 @@ public class CurrentLevel : MonoBehaviour
             BubbleBase bubble = BubbleDataToType.DataToType(sentence.words[i]);
             if (bubble == null) continue;
             bool isFinish = false;
-
+            
             if ((int)bubble.Data.type == 1)
-                HealthManager.Instance.harmfulThingsAdd(bubble.gameObject);
-            
-            
+            //   
+            //
             bubble.transform.SetParent(sentenceGroup);
             
             bubble.StartContentShow(() => { isFinish = true; });
