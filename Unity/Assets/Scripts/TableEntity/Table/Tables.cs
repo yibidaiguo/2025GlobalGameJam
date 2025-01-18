@@ -13,23 +13,17 @@ namespace cfg
 {
 public partial class Tables
 {
-    public common.TbGlobalConfig TbGlobalConfig {get; }
-    public l10n.TbL10NDemo TbL10NDemo {get; }
-    public l10n.TbPatchDemo TbPatchDemo {get; }
+    public tbLevelConfig TbLevelConfig {get; }
 
     public Tables(System.Func<string, ByteBuf> loader)
     {
-        TbGlobalConfig = new common.TbGlobalConfig(loader("common_tbglobalconfig"));
-        TbL10NDemo = new l10n.TbL10NDemo(loader("l10n_tbl10ndemo"));
-        TbPatchDemo = new l10n.TbPatchDemo(loader("l10n_tbpatchdemo"));
+        TbLevelConfig = new tbLevelConfig(loader("tblevelconfig"));
         ResolveRef();
     }
     
     private void ResolveRef()
     {
-        TbGlobalConfig.ResolveRef(this);
-        TbL10NDemo.ResolveRef(this);
-        TbPatchDemo.ResolveRef(this);
+        TbLevelConfig.ResolveRef(this);
     }
 }
 
