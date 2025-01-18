@@ -15,7 +15,7 @@ public class NormalBubble : BubbleBase
     /// <summary>
     /// 泡泡爆炸的回调
     /// </summary>
-    private void OnBoom()
+    public void OnBoom()
     {
         if (!gameObject.IsDestroyed())
         {
@@ -27,10 +27,7 @@ public class NormalBubble : BubbleBase
     IEnumerator LifeCountdown()
     {
         yield return CoroutineTool.WaitForSeconds(GameManager.Instance.bubbleConfig.poppingBubbleLifeTime);
-
-        if (!gameObject.IsDestroyed())
-        {
-            Destroy(gameObject);
-        }
+        
+        btn.onClick.RemoveListener(OnBoom);
     }
 }

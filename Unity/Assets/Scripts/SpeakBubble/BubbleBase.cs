@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using JKFrame;
 using Sirenix.OdinInspector;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -10,15 +11,21 @@ public class BubbleBase : MonoBehaviour
     [ShowInInspector]protected BubbleData Data;
     
     [SerializeField] protected Button btn;
-    [SerializeField] protected Text text;
+    [SerializeField] protected TextMeshProUGUI text;
     
     [SerializeField] protected Animator animator;
+    private Coroutine coroutine;
+    private bool isSurvive;
     private string currentText = "";
-
+    
     protected virtual void OnEnable()
     {
-        if (Data!= null)
+        if (Data != null)
+        {
             text.text = Data.content;
+            isSurvive = true;
+        }
+            
     }
     
     public void SetData(BubbleData data)
@@ -26,15 +33,32 @@ public class BubbleBase : MonoBehaviour
         Data = data;
     }
 
+    public virtual void StopContentShow()
+    {
+        if (coroutine != null)
+        {
+            StopCoroutine(coroutine);
+        }
+        isSurvive = false;
+    }
+
+    public virtual bool IsSurvive()
+    {
+        return isSurvive;
+    }
+    
     public virtual void StartContentShow(Action onComplete = null)
     {
-        StartCoroutine(ContentShow(onComplete));
+        coroutine = StartCoroutine(ContentShow(onComplete));
     }
+    
     
     public virtual IEnumerator ContentShow(Action onComplete = null)
     {
         if (Data != null)
         {
+            isSurvive = true;
+            
             for (int i = 0; i < Data.content.Length; i++)
             {
                 currentText += Data.content[i];
@@ -43,5 +67,10 @@ public class BubbleBase : MonoBehaviour
             }
         }
         onComplete?.Invoke();
+    }
+
+    private void OnDestroy()
+    {
+        isSurvive = false;
     }
 }
