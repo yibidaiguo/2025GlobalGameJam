@@ -1,9 +1,9 @@
+using System;
 using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
 using System.Collections.Generic;
 using JKFrame;
-using Unity.VisualScripting;
 
 public class UI_DialogWindow : UI_WindowBase
 {
@@ -35,7 +35,7 @@ public class UI_DialogWindow : UI_WindowBase
         player = null;
     }
     
-    public void StartDialog(DialogConfig DialogConfig, int stepIndex = 0)
+    public void StartDialog(DialogConfig DialogConfig, int stepIndex = 0,Action onComplete = null)
     {
         if (DialogConfig == null)
         {
@@ -46,15 +46,15 @@ public class UI_DialogWindow : UI_WindowBase
         UISystem.Show<UI_DialogWindow>();
         dialogConfig = DialogConfig;
         this.stepIndex = stepIndex;
-        StartDialogStep(DialogConfig.stepList[stepIndex]);
+        StartDialogStep(DialogConfig.stepList[stepIndex], onComplete);
     }
 
-    private void StartDialogStep(DialogStepConfig stepConfig)
+    private void StartDialogStep(DialogStepConfig stepConfig,Action onComplete = null)
     {
-        StartCoroutine(DoDialogStep(stepConfig));
+        StartCoroutine(DoDialogStep(stepConfig, onComplete));
     }
 
-    private IEnumerator DoDialogStep(DialogStepConfig stepConfig)
+    private IEnumerator DoDialogStep(DialogStepConfig stepConfig,Action onComplete = null)
     {
         if (stepConfig.player)
         {
@@ -87,7 +87,11 @@ public class UI_DialogWindow : UI_WindowBase
             stepIndex += 1;
             StartDialogStep(dialogConfig.stepList[stepIndex]);
         }
-        else OnClose();
+        else
+        {
+            onComplete?.Invoke();
+            OnClose();
+        }
     }
 
     private void DoStepEventsNonBlock(List<IDialogEvent> eventList)

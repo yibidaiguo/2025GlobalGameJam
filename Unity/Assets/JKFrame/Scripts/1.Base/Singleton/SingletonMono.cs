@@ -4,12 +4,19 @@ namespace JKFrame
 {
     public abstract class SingletonMono<T> : MonoBehaviour where T : SingletonMono<T>
     {
-        public static T Instance;
+        private static T _instance;
+        public static T Instance => _instance;
+
         protected virtual void Awake()
         {
-            if (Instance == null)
+            if (_instance == null)
             {
-                Instance = this as T;
+                _instance = this as T;
+                DontDestroyOnLoad(gameObject);
+            }
+            else
+            {
+                Destroy(gameObject);
             }
         }
     }

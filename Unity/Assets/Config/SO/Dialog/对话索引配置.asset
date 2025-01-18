@@ -41,7 +41,7 @@ MonoBehaviour:
       Data: 
     - Name: $k
       Entry: 3
-      Data: 1
+      Data: 40001
     - Name: $v
       Entry: 10
       Data: 0
@@ -54,3 +54,4 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
+  dialogConfigPath: Assets/Config/SO/Dialog/DialogConfig

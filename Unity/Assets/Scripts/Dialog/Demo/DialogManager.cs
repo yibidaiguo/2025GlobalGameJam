@@ -1,3 +1,4 @@
+using System;
 using JKFrame;
 using UnityEngine;
 
@@ -16,7 +17,16 @@ public class DialogManager : SingletonMono<DialogManager>
         return config;
     }
 
-    public void ShowDialog(int id)
+    public void ShowDialog(int id,int stepIndex = 0,Action onComplete = null)
+    {
+        UISystem.Show<UI_DialogWindow>().StartDialog(GetDialogConfig(id));
+        if (GetDialogConfig(id) == null)
+        {
+            Debug.Log($"id为{id}的对话配置不存在");
+        }
+    }
+    
+    public void ShowDialogAsync(int id)
     {
         UISystem.Show<UI_DialogWindow>().StartDialog(GetDialogConfig(id));
         if (GetDialogConfig(id) == null)
