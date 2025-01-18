@@ -1,6 +1,5 @@
 using cfg;
 using JKFrame;
-using UnityEngine;
 
 public static class BubbleDataToType
 {

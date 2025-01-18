@@ -1,27 +1,14 @@
-using System.Collections;
 using System.Collections.Generic;
+using JKFrame;
 using UnityEngine;
-//¹ÜÀíËùÓĞµÄÊÜÉËĞĞÎª
-public class HealthManager : MonoBehaviour
+//ç®¡ç†æ‰€æœ‰çš„å—ä¼¤è¡Œä¸º
+public class HealthManager : SingletonMono<HealthManager>
 {
-    int healthMax;//ÉúÃüÖµÉÏÏŞ
-    int health;//ÉúÃüÖµ
-    public int damage = 1;//ÉËº¦
-    private List<GameObject> harmfulThings;
-    public static HealthManager Instance { get; private set; }
-
-    private void Awake()
-    {
-        if (Instance == null)
-        {
-            Instance = this;
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
-        health = healthMax;
-    }
+    int healthMax;//ç”Ÿå‘½å€¼ä¸Šé™
+    int health;//ç”Ÿå‘½å€¼
+    public int damage = 1;//ä¼¤å®³
+    private List<GameObject> harmfulThings = new ();
+    
 
     public void harmfulThingsAdd(GameObject obj)
     {
@@ -31,26 +18,22 @@ public class HealthManager : MonoBehaviour
 
     public void HealthCaculate()
     {
-
-
-
-
-        //¼ÆËãÉËº¦
+        //è®¡ç®—ä¼¤å®³
         foreach (GameObject obj in harmfulThings)
         {
             if (obj != null)
             {
                 health -= damage;
-                //Todo µôÑª¶¯»­
+                //Todo æ‰è¡€åŠ¨ç”»
             }
         }
-        //ÅĞ¶ÏÊÇ·ñËÀÍö
+        //åˆ¤æ–­æ˜¯å¦æ­»äº¡
         if (health <= 0)
         {
-            //Todo ËÀÍö¶¯»­
-            //Todo ËÀÍöÂß¼­
+            //Todo æ­»äº¡åŠ¨ç”»
+            //Todo æ­»äº¡é€»è¾‘
         }
-        //Çå¿ÕÁĞ±í
+        //æ¸…ç©ºåˆ—è¡¨
         harmfulThings.Clear();
     }
 
