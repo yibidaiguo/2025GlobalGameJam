@@ -13,8 +13,9 @@ public class PoppingBubble : BubbleBase
     }
     
     /// <summary>
-    /// 泡泡爆炸的回调
+    /// 泡泡爆炸的事件
     /// </summary>
+
     private void OnBoom()//泡泡被点击
     {
         PrickManager.Instance.prick(gameObject);
@@ -24,9 +25,6 @@ public class PoppingBubble : BubbleBase
     {
         yield return CoroutineTool.WaitForSeconds(GameManager.Instance.bubbleConfig.poppingBubbleLifeTime);
 
-        if (!gameObject.IsDestroyed())
-        {
-            Destroy(gameObject);
-        }
+        btn.onClick.RemoveListener(OnBoom);
     }
 }

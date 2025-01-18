@@ -11,8 +11,11 @@ public class CurrentLevel : MonoBehaviour
     [ShowInInspector] private int currentSentenceIndex;//当前对话的索引
     [ShowInInspector] public Sentence currentSentence { get; private set; }
     [ShowInInspector] public Dictionary<int, Sentence> currentSentencesDic { get; private set; } = new();
-  
 
+
+    private Coroutine sentenceCoroutine;
+    private bool sentenceActive;
+    
     private void OnEnable()
     {
         currentLevel = GameManager.Instance.currentLevel;
@@ -25,7 +28,7 @@ public class CurrentLevel : MonoBehaviour
 
         GameManager.Instance.RegisterLevel(this);
     }
-
+    
     private void OnDisable()
     {
         currentSentencesDic.Clear();
@@ -37,11 +40,19 @@ public class CurrentLevel : MonoBehaviour
     {
         StartCoroutine(LevelShow());
     }
+
+    public void StopSentenceCoroutine()
+    {
+        if (sentenceCoroutine != null)
+            StopCoroutine(sentenceCoroutine);
+        sentenceActive = false;
+    }
     
     private IEnumerator LevelShow()
     {
         for (int i = 1; i <= currentSentencesDic.Count; i++)
         {
+            sentenceActive = true;
             currentSentenceIndex = i;
             if (currentSentencesDic.TryGetValue(currentSentenceIndex, out var sentence))
             {
@@ -50,7 +61,17 @@ public class CurrentLevel : MonoBehaviour
                 {
                     continue;
                 }
+                bool isFinish = false;
                 
+
+                sentenceCoroutine = StartCoroutine(StartSentence(currentSentence, ()=>isFinish = true));
+
+                while (!isFinish)
+                {
+                    yield return null;
+                    if (!sentenceActive) break;
+                }
+
                 
                 yield return StartCoroutine(StartSentence(currentSentence));
                 
@@ -60,28 +81,39 @@ public class CurrentLevel : MonoBehaviour
         }
     }
 
+
     private void sentenceEnd()//每句话的结束
     {
         AngryManager.Instance.IncreaseAngry();
         HealthManager.Instance.HealthCaculate();
     }
 
-    private IEnumerator StartSentence(Sentence sentence)
+    
+    private IEnumerator StartSentence(Sentence sentence,Action onComplete = null)
     {
-        foreach (var word in sentence.words)//遍历展示句子里的词
+        for (int i = 0; i < sentence.words.Count; i++)
+
         {
-            BubbleBase bubble = BubbleDataToType.DataToType(word,sentenceGroup);
+            BubbleBase bubble = BubbleDataToType.DataToType(sentence.words[i]);
             if (bubble == null) continue;
             bool isFinish = false;
+
             if ((int)bubble.Data.type == 1)
                 HealthManager.Instance.harmfulThingsAdd(bubble.gameObject);
-            bubble.transform.SetParent(sentenceGroup, false);
-            bubble.StartContentShow((() => { isFinish = true; }));
+            
+            
+            bubble.transform.SetParent(sentenceGroup);
+            
+            bubble.StartContentShow(() => { isFinish = true; });
             while (!isFinish)
             {
                 yield return null;
+                if(!bubble.IsSurvive()) break;
             }
-        }        
+
+        }
+        onComplete?.Invoke();
+
     }
 
 }

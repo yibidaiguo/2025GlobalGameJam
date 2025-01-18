@@ -4,7 +4,7 @@ using UnityEngine;
 
 public static class BubbleDataToType
 {
-    public static BubbleBase DataToType(BubbleData data,RectTransform parent)
+    public static BubbleBase DataToType(BubbleData data)
     {
         if (data == null) return null;
         BubbleBase bubble = null;
@@ -12,11 +12,9 @@ public static class BubbleDataToType
         {
             case BubbleType.NormalBubble :
                 bubble = ResSystem.InstantiateGameObject<NormalBubble>(nameof(NormalBubble));
-                bubble.transform.SetParent(parent);
                 break;
             case BubbleType.PoppingBubble :
                 bubble = ResSystem.InstantiateGameObject<PoppingBubble>(nameof(PoppingBubble));
-                bubble.transform.SetParent(parent);
                 break;
         }
         if (bubble == null) return null;
