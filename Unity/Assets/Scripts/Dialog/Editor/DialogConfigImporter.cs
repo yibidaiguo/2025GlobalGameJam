@@ -9,7 +9,7 @@ using System.Linq;
 
 public static class DialogConfigImporter
 {
-    private static string soDirPath = "Assets/Config/SO/Dialog";
+    private static string soDirPath = "Assets/Config/SO/Dialog/DialogConfig";
     private static string excelDirPath = "Assets/Config/Excel/Dialog";
     private static Dictionary<string, Type> allEventTypeDic;
     [MenuItem("Tool/导入对话配置")]

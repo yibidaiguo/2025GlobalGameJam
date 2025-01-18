@@ -9,7 +9,7 @@ dotnet %LUBAN_DLL% ^
     -d bin  ^
     --conf %CONF_ROOT%\luban.conf ^
     -x outputCodeDir=%WORKSPACE%\..\Assets\Scripts\TableEntity/Table ^
-    -x outputDataDir=%WORKSPACE%\..\Assets\Config\GenerateDatas\bytes ^
+    -x outputDataDir=%WORKSPACE%\..\Assets\Resources\Config\GenerateDatas\bytes ^
     -x pathValidator.rootDir=%WORKSPACE%\.. 
 
 pause
