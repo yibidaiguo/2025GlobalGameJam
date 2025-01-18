@@ -15,12 +15,9 @@ public class PoppingBubble : BubbleBase
     /// <summary>
     /// 泡泡爆炸的回调
     /// </summary>
-    private void OnBoom()
+    private void OnBoom()//泡泡被点击
     {
-        if (!gameObject.IsDestroyed())
-        {
-            Destroy(gameObject);
-        }
+        PrickManager.Instance.prick(gameObject);
     }
 
     IEnumerator LifeCountdown()

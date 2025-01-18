@@ -4,13 +4,14 @@ using JKFrame;
 using Sirenix.OdinInspector;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class BubbleBase : MonoBehaviour
 {
-    [ShowInInspector]protected BubbleData Data;
+    [ShowInInspector]public BubbleData Data;//public 是用于让Prickmanager获得到泡泡种类
     
     [SerializeField] protected Button btn;
-    [SerializeField] protected Text text;
+    [SerializeField] protected TextMeshProUGUI text;
     
     [SerializeField] protected Animator animator;
     private string currentText = "";

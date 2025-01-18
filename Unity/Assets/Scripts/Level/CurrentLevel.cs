@@ -7,11 +7,11 @@ using UnityEngine;
 public class CurrentLevel : MonoBehaviour
 {
     [SerializeField] private RectTransform sentenceGroup;
-    [ShowInInspector] private int currentLevel;
-    [ShowInInspector] private int currentSentenceIndex;
+    [ShowInInspector] private int currentLevel;//当前对话
+    [ShowInInspector] private int currentSentenceIndex;//当前对话的索引
     [ShowInInspector] public Sentence currentSentence { get; private set; }
     [ShowInInspector] public Dictionary<int, Sentence> currentSentencesDic { get; private set; } = new();
-
+  
 
     private void OnEnable()
     {
@@ -51,28 +51,37 @@ public class CurrentLevel : MonoBehaviour
                     continue;
                 }
                 
+                
                 yield return StartCoroutine(StartSentence(currentSentence));
                 
-                //TODO:这里需要进行结算伤害
-                
+                sentenceEnd();
             }
 
         }
     }
 
+    private void sentenceEnd()//每句话的结束
+    {
+        AngryManager.Instance.IncreaseAngry();
+        HealthManager.Instance.HealthCaculate();
+    }
+
     private IEnumerator StartSentence(Sentence sentence)
     {
-        foreach (var word in sentence.words)
+        foreach (var word in sentence.words)//遍历展示句子里的词
         {
             BubbleBase bubble = BubbleDataToType.DataToType(word,sentenceGroup);
             if (bubble == null) continue;
             bool isFinish = false;
+            if ((int)bubble.Data.type == 1)
+                HealthManager.Instance.harmfulThingsAdd(bubble.gameObject);
             bubble.transform.SetParent(sentenceGroup, false);
             bubble.StartContentShow((() => { isFinish = true; }));
             while (!isFinish)
             {
                 yield return null;
             }
-        }
+        }        
     }
+
 }
