@@ -73,7 +73,7 @@ MonoBehaviour:
       Data: TestLevel
     - Name: HaveStory
       Entry: 5
-      Data: true
+      Data: false
     - Name: StoryID
       Entry: 3
       Data: 40001

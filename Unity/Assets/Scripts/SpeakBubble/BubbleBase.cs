@@ -5,18 +5,18 @@ using Sirenix.OdinInspector;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
-using TMPro;
+using Unity.VisualScripting;
 
 public class BubbleBase : MonoBehaviour
 {
-    [ShowInInspector]public BubbleData Data;//public ÊÇÓÃÓÚÈÃPrickmanager»ñµÃµ½ÅÝÅÝÖÖÀà
+    [ShowInInspector]public BubbleData Data{ get; private set; }//public ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Prickmanagerï¿½ï¿½Ãµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
     
     [SerializeField] protected Button btn;
     [SerializeField] protected TextMeshProUGUI text;
     
     [SerializeField] protected Animator animator;
     private Coroutine coroutine;
-    private bool isSurvive;
+    protected bool isSurvive;
     private string currentText = "";
     
     protected virtual void OnEnable()
@@ -68,6 +68,19 @@ public class BubbleBase : MonoBehaviour
             }
         }
         onComplete?.Invoke();
+    }
+
+    public virtual void OnDie()
+    {
+        if (!gameObject.IsDestroyed())
+        {
+            Destroy(gameObject);
+        }
+    }
+
+    public virtual void PlayBurstSound()
+    {
+        AudioSystem.PlayOneShot(ResSystem.LoadAsset<AudioClip>("bubble_burst"));
     }
 
     private void OnDestroy()

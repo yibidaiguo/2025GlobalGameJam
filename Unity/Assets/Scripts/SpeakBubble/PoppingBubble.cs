@@ -18,7 +18,8 @@ public class PoppingBubble : BubbleBase
 
     private void OnBoom()//泡泡被点击
     {
-        PrickManager.Instance.prick(gameObject);
+        animator.SetTrigger("IsDie");
+        isSurvive = false;
     }
 
     IEnumerator LifeCountdown()
