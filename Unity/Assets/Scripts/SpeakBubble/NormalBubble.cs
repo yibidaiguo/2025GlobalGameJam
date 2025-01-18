@@ -1,10 +1,11 @@
 using System.Collections;
 using JKFrame;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class NormalBubble : BubbleBase
 {
+    public static readonly int IsDie = Animator.StringToHash("IsDie");
+
     protected override void OnEnable()
     {
         base.OnEnable();
@@ -18,7 +19,8 @@ public class NormalBubble : BubbleBase
 
     private void OnBoom()//泡泡被点击
     {
-        PrickManager.Instance.prick(gameObject);
+        animator.SetTrigger("IsDie");
+        isSurvive = false;
     }
     
     IEnumerator LifeCountdown()

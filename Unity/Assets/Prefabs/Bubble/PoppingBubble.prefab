@@ -10,11 +10,11 @@ GameObject:
   m_Component:
   - component: {fileID: 4810766248027101102}
   - component: {fileID: 4122769841725931650}
-  - component: {fileID: 2347432296755936522}
   - component: {fileID: 52280487758338850}
   - component: {fileID: 4631931591817057315}
   - component: {fileID: 8694463823465730792}
-  - component: {fileID: 598218148632061208}
+  - component: {fileID: 9479833067282957}
+  - component: {fileID: 7766085460255527780}
   m_Layer: 5
   m_Name: PoppingBubble
   m_TagString: Untagged
@@ -39,8 +39,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchoredPosition: {x: 2.8295, y: 53.903}
+  m_SizeDelta: {x: 258.2934, y: 207.8059}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4122769841725931650
 CanvasRenderer:
@@ -50,27 +50,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1426150670934627021}
   m_CullTransparentMesh: 1
---- !u!95 &2347432296755936522
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1426150670934627021}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!114 &52280487758338850
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -85,7 +64,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   btn: {fileID: 8694463823465730792}
   text: {fileID: 1100285012329437874}
-  animator: {fileID: 2347432296755936522}
+  animator: {fileID: 7766085460255527780}
 --- !u!114 &4631931591817057315
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -140,11 +119,11 @@ MonoBehaviour:
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
   m_Interactable: 1
-  m_TargetGraphic: {fileID: 598218148632061208}
+  m_TargetGraphic: {fileID: 9479833067282957}
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &598218148632061208
+--- !u!114 &9479833067282957
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -164,7 +143,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 80236395afbbc6b439d668fa228c1f8d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 948eeb08794332540b40236d165780f8, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -174,6 +153,27 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!95 &7766085460255527780
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1426150670934627021}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: a8c668e0acbc1aa44adf18b0ddd69230, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &6358020584998582181
 GameObject:
   m_ObjectHideFlags: 0
@@ -239,7 +239,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 1231312423
+  m_text: 123
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 6577bff43c2699142bdf5585e4c17d83, type: 2}
   m_sharedMaterial: {fileID: -5145581979093650086, guid: 6577bff43c2699142bdf5585e4c17d83, type: 2}
@@ -302,7 +302,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: 102.666504, y: 78.43787, z: 99.64697, w: 76.53821}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0

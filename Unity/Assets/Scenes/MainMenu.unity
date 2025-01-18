@@ -430,7 +430,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1415238795}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b83aaa0606b49774e892573dbcd2183c, type: 3}
+  m_Script: {fileID: 11500000, guid: f3dc2d455c27ebf448ab78de5e2efe24, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   fadeCanvasGroup: {fileID: 1415238796}
@@ -629,19 +629,10 @@ PrefabInstance:
       addedObject: {fileID: 3189481689968334114}
     - targetCorrespondingSourceObject: {fileID: 6029324472053449207, guid: c88b8a234db27ac42af8a0617dbbae72, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 3189481689968334123}
-    - targetCorrespondingSourceObject: {fileID: 6029324472053449207, guid: c88b8a234db27ac42af8a0617dbbae72, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 3189481689968334122}
-    - targetCorrespondingSourceObject: {fileID: 6029324472053449207, guid: c88b8a234db27ac42af8a0617dbbae72, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 3189481689968334121}
+      addedObject: {fileID: 3189481689968334119}
     - targetCorrespondingSourceObject: {fileID: 6029324472053449207, guid: c88b8a234db27ac42af8a0617dbbae72, type: 3}
       insertIndex: -1
       addedObject: {fileID: 3189481689968334120}
-    - targetCorrespondingSourceObject: {fileID: 6029324472053449207, guid: c88b8a234db27ac42af8a0617dbbae72, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 3189481689968334119}
   m_SourcePrefab: {fileID: 100100000, guid: c88b8a234db27ac42af8a0617dbbae72, type: 3}
 --- !u!1 &3189481689968334107 stripped
 GameObject:
@@ -696,10 +687,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 3189481689968334107}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b83aaa0606b49774e892573dbcd2183c, type: 3}
+  m_Script: {fileID: 11500000, guid: 7c40e44f19198814b95f441bd21161f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fadeCanvasGroup: {fileID: 1415238796}
+  damage: 1
 --- !u!114 &3189481689968334120
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -715,48 +706,6 @@ MonoBehaviour:
   animator: {fileID: 0}
   prickCD: 0.2
   canbePrick: 0
---- !u!114 &3189481689968334121
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3189481689968334107}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7c40e44f19198814b95f441bd21161f5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  damage: 1
---- !u!114 &3189481689968334122
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3189481689968334107}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ac81dddd70ddd024ab5339eb4f4e79d5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  canBlow: 1
-  timerDuration: 45
-  animator: {fileID: 0}
---- !u!114 &3189481689968334123
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3189481689968334107}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7ec6e9735fcbc1341aff14cf376d26dc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  angry: 0
-  angryMax: 100
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
