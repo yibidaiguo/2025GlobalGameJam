@@ -234,13 +234,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 123141341241241431qweqewqwqeqwqeqweqeqwewqwweqeqeqeqeqeqweqewqeqeqeqeqeqeqeqeqeqeqweqweqeqwewqeqewqewqewqeqeewwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww
+  m_text: 1231
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 6577bff43c2699142bdf5585e4c17d83, type: 2}
   m_sharedMaterial: {fileID: -5145581979093650086, guid: 6577bff43c2699142bdf5585e4c17d83, type: 2}
