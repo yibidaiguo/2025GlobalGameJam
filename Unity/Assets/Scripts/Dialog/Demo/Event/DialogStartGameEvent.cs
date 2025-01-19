@@ -9,7 +9,7 @@ public class DialogStartGameEvent : IDialogEvent
 
     public IEnumerator ExcuteBlocking()
     {
-        throw new System.NotImplementedException();
+        yield return null;
     }
 
     public void ConverString(string excelString)

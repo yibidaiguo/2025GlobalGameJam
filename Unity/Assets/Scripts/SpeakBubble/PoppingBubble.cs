@@ -19,6 +19,8 @@ public class PoppingBubble : BubbleBase
     private void OnBoom()//泡泡被点击
     {
         animator.SetTrigger("IsDie");
+        PlayBurstSound();
+        EventSystem.TypeEventTrigger(new BubbleBoomEvent());
         isSurvive = false;
     }
 

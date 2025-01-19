@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 6766991820889118871}
   - component: {fileID: 131974282311058512}
   - component: {fileID: 875757673264374917}
+  - component: {fileID: 4126674641001113504}
   m_Layer: 5
   m_Name: "\u5B88\u62A4\u7075"
   m_TagString: Untagged
@@ -88,7 +89,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6c1f73fc206ae58408f18e071dbc1656, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  image: {fileID: 131974282311058512}
-  timer: 0.1
-  prickSprite: {fileID: 21300000, guid: 5904cdc3424443743a870f6e7c88673b, type: 3}
-  blowSprite: {fileID: 21300000, guid: 6a73baf8b199ee94bb85482a7c94a47b, type: 3}
+  animator: {fileID: 4126674641001113504}
+--- !u!95 &4126674641001113504
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6554572026902690564}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 9862ac82fc484714db23e924f2b4b370, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0

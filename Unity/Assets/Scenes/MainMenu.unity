@@ -181,7 +181,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: b80afe927d9503f4b9f8661cd730d7e9, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -353,7 +353,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 475, y: -75}
+  m_AnchoredPosition: {x: 575, y: -175}
   m_SizeDelta: {x: -1550, y: -950}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &303085121
@@ -751,7 +751,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 475, y: 125}
+  m_AnchoredPosition: {x: 25, y: -175}
   m_SizeDelta: {x: -1550, y: -950}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &998153910
@@ -1032,8 +1032,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\u9000\u51FA\u6E38\u620F"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 6577bff43c2699142bdf5585e4c17d83, type: 2}
-  m_sharedMaterial: {fileID: -5145581979093650086, guid: 6577bff43c2699142bdf5585e4c17d83, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 08e70b7b6483d1241a6641321ab1e973, type: 2}
+  m_sharedMaterial: {fileID: -3433612796705421867, guid: 08e70b7b6483d1241a6641321ab1e973, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1263,8 +1263,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\u5F00\u59CB\u6E38\u620F"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 6577bff43c2699142bdf5585e4c17d83, type: 2}
-  m_sharedMaterial: {fileID: -5145581979093650086, guid: 6577bff43c2699142bdf5585e4c17d83, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 08e70b7b6483d1241a6641321ab1e973, type: 2}
+  m_sharedMaterial: {fileID: -3433612796705421867, guid: 08e70b7b6483d1241a6641321ab1e973, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1479,7 +1479,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c40e44f19198814b95f441bd21161f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healthMax: 100
+  healthMax: 30
   health: 100
   damage: 1
 --- !u!114 &3189481689968334125
@@ -1495,7 +1495,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   angry: 0
-  angryMax: 100
+  angryMax: 1
 --- !u!114 &3189481689968334126
 MonoBehaviour:
   m_ObjectHideFlags: 0

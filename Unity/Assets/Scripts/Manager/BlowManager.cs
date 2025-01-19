@@ -9,8 +9,7 @@ public class BlowManager : MonoBehaviour
     [SerializeField] public float timerDuration = 45f;
 
     [SerializeField] private Animator animator;
-
-    private List<GameObject> bubbles = new List<GameObject>();
+    
 
     public static BlowManager Instance { get; private set; }
 
