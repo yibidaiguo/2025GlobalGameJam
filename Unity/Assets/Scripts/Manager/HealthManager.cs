@@ -66,7 +66,9 @@ public class HealthManager : SingletonMono<HealthManager>
 
     public void GoNextLevel()
     {
+        Debug.Log("GoNextLevel");
         int maxkey = GameManager.Instance.currentLevelInfo.currentSentencesDic.Keys.Max();
+        Debug.Log(maxkey);
         if (GameManager.Instance.currentLevelInfo.currentSentenceIndex == maxkey)
         {
             Debug.Log("通关");
