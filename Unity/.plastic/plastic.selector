@@ -1,4 +1,0 @@
-repository "Unity@tj_wuxianyijinproject@cloud.cn"
-  path "/"
-    br "/main"
-    co "/main"

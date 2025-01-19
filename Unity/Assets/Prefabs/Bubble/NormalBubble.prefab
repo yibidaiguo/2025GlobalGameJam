@@ -172,8 +172,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e88dbadaeb558e4c931f16b5c7dc3a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  childTextMeshProUGUI: {fileID: 6240197298168648770}
-  parentButton: {fileID: 4250410962557355942}
+  childRectTransform: {fileID: 1572470775721747595}
+  parentRectTransform: {fileID: 4810766248027101102}
 --- !u!1 &6358020584998582181
 GameObject:
   m_ObjectHideFlags: 0
@@ -210,7 +210,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: -1.4376831, y: -1.6417007}
-  m_SizeDelta: {x: -122.493, y: 0}
+  m_SizeDelta: {x: 0, y: -173.06229}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8054230686864226656
 CanvasRenderer:
@@ -321,5 +321,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3245ec927659c4140ac4f8d17403cc18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_HorizontalFit: 0
-  m_VerticalFit: 2
+  m_HorizontalFit: 2
+  m_VerticalFit: 0
