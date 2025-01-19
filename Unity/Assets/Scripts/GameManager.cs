@@ -11,7 +11,7 @@ public class GameManager : SingletonMono<GameManager>
     [ShowInInspector] public int currentLevel { get; private set; }
     public CurrentLevel currentLevelInfo { get; private set; }
 
-    public void NextLevel()
+    public void NextLevel()//下一关
     {
         int nextLevelIndex = currentLevel + 1;
         if (levelSceneConfig.levels.ContainsKey(nextLevelIndex))
@@ -38,7 +38,7 @@ public class GameManager : SingletonMono<GameManager>
         }
     }
 
-    public void ExitLevel()
+    public void ExitLevel()//退出当前关卡
     {
         StartCoroutine(LoadLevel(0));
     }
