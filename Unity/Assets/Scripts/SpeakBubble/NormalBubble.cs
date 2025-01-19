@@ -20,6 +20,7 @@ public class NormalBubble : BubbleBase
     private void OnBoom()//泡泡被点击
     {
         animator.SetTrigger("IsDie");
+        EventSystem.TypeEventTrigger(new BubbleBoomEvent());
         isSurvive = false;
     }
     
@@ -29,4 +30,9 @@ public class NormalBubble : BubbleBase
         
         btn.onClick.RemoveListener(OnBoom);
     }
+}
+
+public struct BubbleBoomEvent
+{
+    
 }

@@ -16,12 +16,6 @@ public class HealthManager : SingletonMono<HealthManager>
         health = healthMax;
     }
 
-    public void harmfulThingsAdd(GameObject obj)
-    {
-        harmfulThings.Add(obj);
-    }
-
-
     public void HealthCaculate()
     {
         foreach (BubbleBase bubble in GameManager.Instance.currentLevelInfo.sentenceGroup.GetComponentsInChildren<BubbleBase>(true))

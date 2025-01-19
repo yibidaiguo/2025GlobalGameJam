@@ -659,6 +659,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sentenceGroup: {fileID: 247889016121081194}
+  canvas: {fileID: 2227688728707435800}
 --- !u!1 &4699164479279001056
 GameObject:
   m_ObjectHideFlags: 0
