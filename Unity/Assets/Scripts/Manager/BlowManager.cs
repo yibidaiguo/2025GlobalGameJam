@@ -43,6 +43,8 @@ public class BlowManager : MonoBehaviour
             StartCoroutine(BlowTimer());
             GameManager.Instance.currentLevelInfo.StopSentenceCoroutine();
             StartCoroutine(brustOrder());
+            AudioSystem.PlayOneShot(ResSystem.LoadAsset<AudioClip>("blowing"));
+            EventSystem.TypeEventTrigger(new BlowEvent());
         }
     }
 
@@ -65,4 +67,9 @@ public class BlowManager : MonoBehaviour
             }
         }
     }
+}
+
+public struct BlowEvent
+{
+    
 }

@@ -11,6 +11,7 @@ public class CurrentLevel : MonoBehaviour
     [ShowInInspector] private int currentSentenceIndex;//当前对话的索引
     [ShowInInspector] public Sentence currentSentence { get; private set; }
     [ShowInInspector] public Dictionary<int, Sentence> currentSentencesDic { get; private set; } = new();
+    [SerializeField]private Canvas canvas;
 
 
     private Coroutine sentenceCoroutine;
@@ -35,11 +36,14 @@ public class CurrentLevel : MonoBehaviour
         currentSentencesDic.Clear();
         currentLevel = 0;
         GameManager.Instance.UnregisterLevel(this);
+        canvas.sortingOrder = -1;
     }
     
     public void StartGame()
     {
         StartCoroutine(LevelShow());
+        GameManager.Instance.StartBgm(GameManager.Instance.fightBGMConfig);
+        canvas.sortingOrder = 3;
     }
 
     public void StopSentenceCoroutine()

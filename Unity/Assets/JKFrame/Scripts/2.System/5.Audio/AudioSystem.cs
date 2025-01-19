@@ -17,7 +17,8 @@ namespace JKFrame
         public static bool IsMute { get => audioModule.IsMute; set { audioModule.IsMute = value; } }
         public static bool IsLoop { get => audioModule.IsLoop; set { audioModule.IsLoop = value; } }
         public static bool IsPause { get => audioModule.IsPause; set { audioModule.IsPause = value; } }
-
+        
+        public static bool IsBgmPlaying{ get => audioModule.IsBGMAudioPlaying(); }
         /// <summary>
         /// 播放背景音乐
         /// </summary>

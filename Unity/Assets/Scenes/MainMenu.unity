@@ -328,6 +328,7 @@ GameObject:
   - component: {fileID: 303085123}
   - component: {fileID: 303085122}
   - component: {fileID: 303085121}
+  - component: {fileID: 303085124}
   m_Layer: 5
   m_Name: ExitGame
   m_TagString: Untagged
@@ -419,8 +420,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: c1e1f439e83ab284195fbe0ef185e879, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -437,6 +438,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 303085119}
   m_CullTransparentMesh: 1
+--- !u!114 &303085124
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 303085119}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3151094e329209b468505936c779a890, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -713,6 +726,7 @@ GameObject:
   - component: {fileID: 998153912}
   - component: {fileID: 998153911}
   - component: {fileID: 998153910}
+  - component: {fileID: 998153913}
   m_Layer: 5
   m_Name: StarGame
   m_TagString: Untagged
@@ -804,8 +818,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: c1e1f439e83ab284195fbe0ef185e879, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -822,6 +836,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 998153908}
   m_CullTransparentMesh: 1
+--- !u!114 &998153913
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 998153908}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3151094e329209b468505936c779a890, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1415238795
 GameObject:
   m_ObjectHideFlags: 0
@@ -1439,6 +1465,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelSceneConfig: {fileID: 11400000, guid: 7ae7f21192014d0409abde6f5e5b5e75, type: 2}
   bubbleConfig: {fileID: 11400000, guid: 3f9f66d81b7c29d40b28b88b54668d1f, type: 2}
+  normalBGMConfig: {fileID: 11400000, guid: 39de6ebaf0fdcee489dac04b03493520, type: 2}
+  fightBGMConfig: {fileID: 11400000, guid: aa1bd0ad8872aa7458de2eec5e52becd, type: 2}
 --- !u!114 &3189481689968334119
 MonoBehaviour:
   m_ObjectHideFlags: 0
