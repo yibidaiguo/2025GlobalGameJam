@@ -1,14 +1,20 @@
 using System.Collections.Generic;
 using JKFrame;
 using UnityEngine;
+using cfg;
 //管理所有的受伤行为
 public class HealthManager : SingletonMono<HealthManager>
 {
-    int healthMax;//生命值上限
-    int health;//生命值
+    public int healthMax = 100;//生命值上限
+    public int health;//生命值
     public int damage = 1;//伤害
     private List<GameObject> harmfulThings = new ();
     
+    protected override void Awake()
+    {
+        base.Awake();
+        health = healthMax;
+    }
 
     public void harmfulThingsAdd(GameObject obj)
     {
@@ -18,15 +24,40 @@ public class HealthManager : SingletonMono<HealthManager>
 
     public void HealthCaculate()
     {
+        foreach (BubbleBase bubble in GameManager.Instance.currentLevelInfo.sentenceGroup.GetComponentsInChildren<BubbleBase>(true))
+            { 
+                if (bubble != null)
+                {   
+                    bubble.PlayBubbleBurst();
+                } 
+            }
         //计算伤害
-        foreach (GameObject obj in harmfulThings)
+        int countPassed = 0;
+        int countNow = 0;
+        int badcount = 0;
+        foreach (BubbleBase bubble in GameManager.Instance.currentLevelInfo.sentenceGroup.GetComponentsInChildren<BubbleBase>(true))
         {
-            if (obj != null)
+            if(bubble.Data.type == BubbleType.NormalBubble)
+            {   
+                countNow ++;
+            }
+            else
             {
-                health -= damage;
-                //Todo 掉血动画
+                badcount ++;
             }
         }
+        foreach(BubbleData bubble in GameManager.Instance.currentLevelInfo.currentSentence.words)
+        {
+            if(bubble.type == BubbleType.NormalBubble)
+            {   
+                countPassed ++;
+            }
+        }
+
+
+        //计算伤害
+        health -= (countPassed - countNow + badcount)* damage;
+
         //判断是否死亡
         if (health <= 0)
         {
