@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class CurrentLevel : MonoBehaviour
 {
-    [SerializeField] public RectTransform sentenceGroup{get;private set;}
+    public RectTransform sentenceGroup;
     [ShowInInspector] private int currentLevel;//当前对话
     [ShowInInspector] private int currentSentenceIndex;//当前对话的索引
     [ShowInInspector] public Sentence currentSentence { get; private set; }
@@ -44,16 +44,13 @@ public class CurrentLevel : MonoBehaviour
 
     public void StopSentenceCoroutine()
     {
-        Debug.Log("StopSentenceCoroutine");
         if (sentenceCoroutine != null)
         {   
             
             StopCoroutine(sentenceCoroutine);
-            Debug.Log("StopSentenceCoroutine2");
         }
         
         sentenceActive = false;
-        Debug.Log("StopSentenceCoroutine3");
     }
     
     private IEnumerator LevelShow()
@@ -70,7 +67,6 @@ public class CurrentLevel : MonoBehaviour
                     continue;
                 }
                 bool isFinish = false;
-                
 
                 sentenceCoroutine = StartCoroutine(StartSentence(currentSentence, ()=>isFinish = true));
 
@@ -103,9 +99,6 @@ public class CurrentLevel : MonoBehaviour
             if (bubble == null) continue;
             bool isFinish = false;
             
-            if ((int)bubble.Data.type == 1)
-            //   
-            //
             bubble.transform.SetParent(sentenceGroup);
             
             bubble.StartContentShow(() => { isFinish = true; });

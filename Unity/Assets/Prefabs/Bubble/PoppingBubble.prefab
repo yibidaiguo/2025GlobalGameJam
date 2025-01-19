@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 8694463823465730792}
   - component: {fileID: 9479833067282957}
   - component: {fileID: 7766085460255527780}
+  - component: {fileID: 713779350517151873}
   m_Layer: 5
   m_Name: PoppingBubble
   m_TagString: Untagged
@@ -39,8 +40,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 2.8295, y: 53.903}
-  m_SizeDelta: {x: 258.2934, y: 207.8059}
+  m_AnchoredPosition: {x: -30.2308, y: 53.903}
+  m_SizeDelta: {x: 445.6723, y: 207.8059}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4122769841725931650
 CanvasRenderer:
@@ -77,8 +78,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e88dbadaeb558e4c931f16b5c7dc3a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  childTextMeshProUGUI: {fileID: 1100285012329437874}
-  parentButton: {fileID: 8694463823465730792}
+  childRectTransform: {fileID: 0}
+  parentRectTransform: {fileID: 0}
 --- !u!114 &8694463823465730792
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -174,6 +175,20 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &713779350517151873
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1426150670934627021}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e88dbadaeb558e4c931f16b5c7dc3a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  childRectTransform: {fileID: 1572470775721747595}
+  parentRectTransform: {fileID: 4810766248027101102}
 --- !u!1 &6358020584998582181
 GameObject:
   m_ObjectHideFlags: 0
@@ -185,6 +200,7 @@ GameObject:
   - component: {fileID: 1572470775721747595}
   - component: {fileID: 2837057095516363390}
   - component: {fileID: 1100285012329437874}
+  - component: {fileID: 1665401992124950225}
   m_Layer: 5
   m_Name: Text
   m_TagString: Untagged
@@ -209,7 +225,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 20, y: 20}
+  m_SizeDelta: {x: 0, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2837057095516363390
 CanvasRenderer:
@@ -302,9 +318,23 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 102.666504, y: 78.43787, z: 99.64697, w: 76.53821}
+  m_margin: {x: 91.68689, y: 74.16797, z: 93.54724, w: 72.26843}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &1665401992124950225
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6358020584998582181}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3245ec927659c4140ac4f8d17403cc18, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_HorizontalFit: 2
+  m_VerticalFit: 0

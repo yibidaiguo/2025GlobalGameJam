@@ -12,11 +12,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
   m_Name: Audio
   m_EditorClassIdentifier: 
-  m_GroupName: Packed Assets
+  m_GroupName: Audio
   m_Data:
     m_SerializedData: []
   m_GUID: cceb648356a27f94d80f51399aabad26
-  m_SerializeEntries: []
+  m_SerializeEntries:
+  - m_GUID: 425d7778838143949845099c57ed9e3a
+    m_Address: bubble_burst
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 9e36aee09ede7d940a160faeb3fb6eb3, type: 2}
   m_SchemaSet:

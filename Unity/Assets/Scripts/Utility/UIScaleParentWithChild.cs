@@ -1,20 +1,17 @@
-using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class UIScaleParentWithChild : MonoBehaviour
 {
-    [SerializeField]private TextMeshProUGUI childTextMeshProUGUI;
-    [SerializeField]private Button parentButton;
+    [SerializeField]private RectTransform childRectTransform;
+    [SerializeField]private RectTransform parentRectTransform;
     
     
     void Update()
     {
-
-        RectTransform childRectTransform = childTextMeshProUGUI.rectTransform;
-
-        RectTransform parentRectTransform = parentButton.transform as RectTransform;
+        if (childRectTransform != null && parentRectTransform != null)
+        {
+            parentRectTransform.sizeDelta = childRectTransform.sizeDelta;
+        }
         
-        parentRectTransform.sizeDelta = childRectTransform.sizeDelta;
     }
 }
