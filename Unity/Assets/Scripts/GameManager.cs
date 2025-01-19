@@ -20,6 +20,11 @@ public class GameManager : SingletonMono<GameManager>
         }
     }
 
+    public void StartGame()
+    {
+        StartCoroutine(LoadLevel(1));
+    }
+
     public void RestartLevel()
     {
         StartCoroutine(LoadLevel(currentLevel));

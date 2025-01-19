@@ -9,16 +9,16 @@ using Unity.VisualScripting;
 
 public class BubbleBase : MonoBehaviour
 {
-    [ShowInInspector]public BubbleData Data{ get; private set; }//public ��������Prickmanager��õ���������
-    
+    [ShowInInspector] public BubbleData Data { get; private set; } //public ��������Prickmanager��õ���������
+
     [SerializeField] protected Button btn;
     [SerializeField] protected TextMeshProUGUI text;
-    
+
     [SerializeField] protected Animator animator;
     private Coroutine coroutine;
     protected bool isSurvive;
     private string currentText = "";
-    
+
     protected virtual void OnEnable()
     {
         if (Data != null)
@@ -26,9 +26,8 @@ public class BubbleBase : MonoBehaviour
             text.text = Data.content;
             isSurvive = true;
         }
-            
     }
-    
+
     public void SetData(BubbleData data)
     {
         Data = data;
@@ -40,6 +39,7 @@ public class BubbleBase : MonoBehaviour
         {
             StopCoroutine(coroutine);
         }
+
         isSurvive = false;
     }
 
@@ -47,19 +47,19 @@ public class BubbleBase : MonoBehaviour
     {
         return isSurvive;
     }
-    
+
     public virtual void StartContentShow(Action onComplete = null)
     {
         coroutine = StartCoroutine(ContentShow(onComplete));
     }
-    
-    
+
+
     public virtual IEnumerator ContentShow(Action onComplete = null)
     {
         if (Data != null)
         {
             isSurvive = true;
-            
+
             for (int i = 0; i < Data.content.Length; i++)
             {
                 currentText += Data.content[i];
@@ -67,6 +67,7 @@ public class BubbleBase : MonoBehaviour
                 yield return CoroutineTool.WaitForSeconds(GameManager.Instance.bubbleConfig.contentTransitionTime);
             }
         }
+
         onComplete?.Invoke();
     }
 
@@ -74,7 +75,7 @@ public class BubbleBase : MonoBehaviour
     {
         animator.SetTrigger("IsDie");
     }
-    
+
     public virtual void OnDie()
     {
         if (!gameObject.IsDestroyed())

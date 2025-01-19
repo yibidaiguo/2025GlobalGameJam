@@ -1,11 +1,9 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class AngryManager : MonoBehaviour
 {
     [SerializeField] protected int angry = 0;
-    [SerializeField] protected int angryMax = 100;//±¬·¢Ê±ĞĞÊı
+    [SerializeField] protected int angryMax = 100;//çˆ†å‘æ—¶è¡Œæ•°
     public static AngryManager Instance { get; private set; }
 
     private void Awake()
