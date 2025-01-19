@@ -56,10 +56,20 @@ public class HealthManager : SingletonMono<HealthManager>
         if (health <= 0)
         {
             //Todo 死亡动画
-            //Todo 死亡逻辑
         }
+
         //清空列表
         harmfulThings.Clear();
+    }
+
+    void Update()
+    {
+        int level = 1;
+        if(level <  GameManager.Instance.currentLevelInfo.currentLevel )
+        {
+            level++;
+            
+        }
     }
 
 }
