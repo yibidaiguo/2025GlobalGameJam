@@ -42,34 +42,26 @@ public class BlowManager : MonoBehaviour
             canBlow = false;
             StartCoroutine(BlowTimer());
             GameManager.Instance.currentLevelInfo.StopSentenceCoroutine();
-            Debug.Log("Blow");
             StartCoroutine(brustOrder());
         }
     }
 
-    public void AddBubble(GameObject bubble)
-    {
-        bubbles.Add(bubble);
-    }
-
     IEnumerator BlowTimer()
     {
-        yield return new WaitForSeconds(timerDuration);
+        yield return CoroutineTool.WaitForSeconds(timerDuration);
         canBlow = true;
     }
 
     IEnumerator brustOrder()
     {
-        float time = 0.1f;
-
         foreach (BubbleBase bubble in GameManager.Instance.currentLevelInfo.sentenceGroup
                      .GetComponentsInChildren<BubbleBase>(true))
         {
             if (bubble != null)
             {
-                yield return CoroutineTool.WaitForSeconds(time);
-                bubble.PlayBubbleBurst();
-                Debug.Log("brust");
+                yield return CoroutineTool.WaitForSeconds(0.1f);
+                if(bubble!= null)
+                    bubble.PlayBubbleBurst();
             }
         }
     }
