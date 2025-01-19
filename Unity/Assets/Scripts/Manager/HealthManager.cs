@@ -18,6 +18,7 @@ public class HealthManager : SingletonMono<HealthManager>
 
     public void HealthCaculate()
     {
+        //炸
         foreach (BubbleBase bubble in GameManager.Instance.currentLevelInfo.sentenceGroup.GetComponentsInChildren<BubbleBase>(true))
             { 
                 if (bubble != null)
@@ -62,13 +63,15 @@ public class HealthManager : SingletonMono<HealthManager>
         harmfulThings.Clear();
     }
 
-    void Update()
+    public void GoNextLevel()
     {
-        int level = 1;
-        if(level <  GameManager.Instance.currentLevelInfo.currentLevel )
+        Debug.Log("1");
+        int maxkey = GameManager.Instance.currentLevelInfo.currentSentencesDic.keys.max();
+        Debug.Log("2");
+        if (GameManager.Instance.currentLevelInfo.currentSentenceIndex == maxkey)
         {
-            level++;
-            
+            Debug.Log("通关");
+            GameManager.Instance.NextLevel();
         }
     }
 

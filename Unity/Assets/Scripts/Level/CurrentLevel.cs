@@ -91,6 +91,7 @@ public class CurrentLevel : MonoBehaviour
     {
         AngryManager.Instance.IncreaseAngry();
         HealthManager.Instance.HealthCaculate();
+        HealthManager.Instance.GoNextLevel();
     }
 
     
