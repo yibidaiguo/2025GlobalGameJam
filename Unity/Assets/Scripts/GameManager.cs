@@ -10,7 +10,18 @@ public class GameManager : SingletonMono<GameManager>
     public BubbleConfig bubbleConfig;
     [ShowInInspector] public int currentLevel { get; private set; }
     public CurrentLevel currentLevelInfo { get; private set; }
+    
+    public BGMConfig normalBGMConfig;
+    public BGMConfig fightBGMConfig;
+    private Coroutine bgmCoroutine;
 
+    void Start()
+    {
+        StartBgm(normalBGMConfig);
+        AudioSystem.EffectVolume = 1f;
+        AudioSystem.BGVolume = 0.5f;
+    }
+    
     public void NextLevel()
     {
         int nextLevelIndex = currentLevel + 1;
@@ -23,6 +34,13 @@ public class GameManager : SingletonMono<GameManager>
     public void StartGame()
     {
         StartCoroutine(LoadLevel(1));
+    }
+
+    public void GameOver()
+    {
+        ExitLevel();
+        AudioSystem.PlayOneShot(ResSystem.LoadAsset<AudioClip>("gameover"));
+        StartCoroutine(PlayBgm(normalBGMConfig));
     }
 
     public void RestartLevel()
@@ -41,6 +59,23 @@ public class GameManager : SingletonMono<GameManager>
     public void ExitLevel()
     {
         StartCoroutine(LoadLevel(0));
+    }
+
+    public void StartBgm(BGMConfig bgmConfig)
+    {
+        if(bgmCoroutine != null) StopCoroutine(bgmCoroutine);
+        bgmCoroutine = StartCoroutine(PlayBgm(bgmConfig));
+    }
+    
+    private IEnumerator PlayBgm(BGMConfig bgmConfig)
+    {
+        AudioSystem.PlayBGAudio(bgmConfig.Head,false);
+        yield return null;
+        while (AudioSystem.IsBgmPlaying)
+        {
+            yield return null;
+        }
+        AudioSystem.PlayBGAudio(bgmConfig.Body);
     }
 
     public void ExitGame()
@@ -68,9 +103,6 @@ public class GameManager : SingletonMono<GameManager>
         {
             currentLevel = levelID;
             yield return SceneManager.LoadSceneAsync(levelInfo.SceneName);
-            
-           yield return StartCoroutine(SceneTransition.Instance.FadeIn());
-            
             if (levelInfo.HaveStory)
             {
                 bool isContinue = true;
@@ -80,6 +112,14 @@ public class GameManager : SingletonMono<GameManager>
                     yield return null;
                 }
             }
+            
+            yield return StartCoroutine(SceneTransition.Instance.FadeIn());
+
+            if (!levelInfo.HaveStory)
+            {
+                currentLevelInfo.StartGame();
+            }
+            
         }
     }
 }

@@ -17,8 +17,28 @@ MonoBehaviour:
     m_SerializedData: []
   m_GUID: cceb648356a27f94d80f51399aabad26
   m_SerializeEntries:
+  - m_GUID: 0c798c6427531714aa117a0793545a8b
+    m_Address: button
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 19712789eac273846a1050af0c0cc2d8
+    m_Address: blowing
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 425d7778838143949845099c57ed9e3a
     m_Address: bubble_burst
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 802e8aa882f94a549aca99ae6a255bae
+    m_Address: gameover
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: a7cb7b2cda3e66540920f6dae3e24955
+    m_Address: hongwenle
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0

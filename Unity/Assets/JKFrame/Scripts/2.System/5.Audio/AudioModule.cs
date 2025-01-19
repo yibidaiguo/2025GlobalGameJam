@@ -296,6 +296,11 @@ namespace JKFrame
             IsPause = false;
         }
 
+        public bool IsBGMAudioPlaying()
+        {
+            return BGAudioSource.isPlaying;
+        }
+
         #endregion
 
         #region 特效音乐
