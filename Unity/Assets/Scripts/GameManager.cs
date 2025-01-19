@@ -64,7 +64,7 @@ public class GameManager : SingletonMono<GameManager>
             currentLevel = levelID;
             yield return SceneManager.LoadSceneAsync(levelInfo.SceneName);
             
-            yield return StartCoroutine(SceneTransition.Instance.FadeIn());
+           yield return StartCoroutine(SceneTransition.Instance.FadeIn());
             
             if (levelInfo.HaveStory)
             {
