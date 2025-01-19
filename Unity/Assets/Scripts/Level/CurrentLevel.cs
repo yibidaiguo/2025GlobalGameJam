@@ -8,7 +8,7 @@ public class CurrentLevel : MonoBehaviour
 {
     public RectTransform sentenceGroup;
     [ShowInInspector] private int currentLevel;//当前对话
-    [ShowInInspector] private int currentSentenceIndex;//当前对话的索引
+    [ShowInInspector] public int currentSentenceIndex{ get; private set; }//当前对话的索引
     [ShowInInspector] public Sentence currentSentence { get; private set; }
     [ShowInInspector] public Dictionary<int, Sentence> currentSentencesDic { get; private set; } = new();
     [SerializeField]private Canvas canvas;

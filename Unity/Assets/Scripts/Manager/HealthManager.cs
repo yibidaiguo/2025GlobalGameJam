@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using JKFrame;
 using UnityEngine;
 using cfg;
@@ -65,9 +66,7 @@ public class HealthManager : SingletonMono<HealthManager>
 
     public void GoNextLevel()
     {
-        Debug.Log("1");
-        int maxkey = GameManager.Instance.currentLevelInfo.currentSentencesDic.keys.max();
-        Debug.Log("2");
+        int maxkey = GameManager.Instance.currentLevelInfo.currentSentencesDic.Keys.Max();
         if (GameManager.Instance.currentLevelInfo.currentSentenceIndex == maxkey)
         {
             Debug.Log("通关");
